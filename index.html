@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sinks R Us - Login</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
-</head>
-<body class="bg-gray-100">
-    <div class="flex items-center justify-center min-h-screen">
-        <div class="bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-6 text-center">Sinks R Us Login</h2>
-            <form action="employee_list.html" method="get"> 
-                <div class="mb-4">
-                    <label for="username" class="block text-gray-700 font-bold mb-2">Username:</label>
-                    <input type="text" id="username" name="username" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                </div>
-                <div class="mb-6">
-                    <label for="password" class="block text-gray-700 font-bold mb-2">Password:</label>
-                    <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-                </div>
-                <div class="flex items-center justify-between">
-                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                        Login
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div>
-</body>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Login - Sinks R Us</title>  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
+</head>  
+<body class="flex items-center justify-center h-screen bg-gray-100">  
+    <div class="bg-white p-8 rounded-lg shadow-md w-96">  
+        <h2 class="text-2xl font-bold mb-6">Login</h2>  
+        <form action="employee_list.html" method="post" onsubmit="return validateForm()">  
+            <div class="mb-4">  
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>  
+                <input type="text" id="username" name="username" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"/>  
+            </div>  
+            <div class="mb-6">  
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>  
+                <input type="password" id="password" name="password" required class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"/>  
+            </div>  
+            <button type="submit" class="w-full bg-indigo-600 text-white rounded-md p-2 hover:bg-indigo-700">Login</button>  
+        </form>  
+    </div>  
+    <script>  
+        function validateForm() {  
+            const username = document.getElementById("username").value;  
+            const password = document.getElementById("password").value;  
+            if (username === "" || password === "") {  
+                alert("Both fields are required.");  
+                return false;  
+            }  
+            return true; // The form will submit if both fields are filled  
+        }  
+    </script>  
+</body>  
 </html>
